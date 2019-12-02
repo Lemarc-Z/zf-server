@@ -2,6 +2,8 @@ class Controller {
   // 用户登录
   async login(ctx, next) {
     // 获取请求提交的数据
+
+    console.log("attemptting my ass");
     let name = ctx.request.body.name || "",
       pwd = ctx.request.body.pwd || "";
     console.log(name, pwd);
