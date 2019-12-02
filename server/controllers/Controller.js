@@ -4,15 +4,21 @@ class Controller {
     // 获取请求提交的数据
 
     console.log("attemptting my ass");
-    let name = ctx.request.body.name || "",
-      pwd = ctx.request.body.pwd || "";
-    console.log(name, pwd);
+    let customer = ctx.request.body.customer || "";
+    let model = ctx.request.body.model || "";
+    let type = ctx.request.body.type || "";
+    let color = ctx.request.body.color || "";
+    let pieces = ctx.request.body.pieces || "";
+    let price = ctx.request.body.price || "";
+    let amount = ctx.request.body.amount || "";
+
+    console.log(`${JSON.stringify(customer)}`);
 
     // do something
 
     ctx.body = {
-      status: true,
-      token: "123"
+      model,
+      type
     };
   }
 
