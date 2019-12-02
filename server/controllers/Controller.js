@@ -17,8 +17,7 @@ class Controller {
     // do something
 
     ctx.body = {
-      model,
-      type
+      success: true
     };
   }
 
