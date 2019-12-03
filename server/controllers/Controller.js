@@ -26,7 +26,7 @@ class Controller {
     // let sql = "INSERT INTO hell set ?";
     let now = Date.now();
     let val = {
-      id: now.toString().slice(0, 3) + "ZF" + orderNum,
+      id: now.toString().slice(-3) + "ZF" + orderNum,
       // customer,
       model,
       type,
@@ -37,6 +37,7 @@ class Controller {
       date: new Date().toISOString().split("T")[0]
     };
     client.insertOne(val);
+    // client.findAll();
     console.log(`success`);
     // do something
 

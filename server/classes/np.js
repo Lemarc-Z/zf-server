@@ -8,6 +8,13 @@ class np {
     query(sql, value);
     console.log(`np +1 `);
   }
+
+  async findAll() {
+    let sql = "SELECT * FROM np";
+    query(sql).then(function(results) {
+      console.log(`- results ${JSON.stringify(results, null, 4)}`);
+    });
+  }
 }
 
 module.exports = new np();

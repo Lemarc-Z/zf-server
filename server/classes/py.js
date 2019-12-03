@@ -8,6 +8,13 @@ class py {
     query(sql, value);
     console.log(`np +1 `);
   }
+
+  async findAll() {
+    let sql = "SELECT * FROM py";
+    query(sql).then(function(results) {
+      console.log(`- results ${JSON.stringify(results)}`);
+    });
+  }
 }
 
 module.exports = new py();
