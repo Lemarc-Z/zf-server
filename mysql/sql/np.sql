@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS  `others` (
+CREATE TABLE IF NOT EXISTS  `np` (
     `id` varchar(10) NOT NULL,
     `model` varchar(20) DEFAULT NULL,
     `type` varchar(12) DEFAULT NULL,
