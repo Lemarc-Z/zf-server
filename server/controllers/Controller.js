@@ -1,12 +1,13 @@
 // const { query } = require("../../mysql/util/db");
-const tickets = require("../classes/Tickets");
+const np = require("../classes/np");
+const py = require("../classes/py");
+const others = require("../classes/others");
 
 class Controller {
   // 用户登录
   async login(ctx, next) {
     // 获取请求提交的数据
 
-    console.log("attemptting my ass");
     let customer = ctx.request.body.customer || "";
     let model = ctx.request.body.model || "";
     let type = ctx.request.body.type || "";
@@ -17,11 +18,16 @@ class Controller {
 
     console.log(`${JSON.stringify(customer)}`);
 
+    let client;
+    if (customer === "南平") client = np;
+    else if (customer === "鹏延") client = py;
+    else client = others;
+
     // let sql = "INSERT INTO hell set ?";
     let now = Date.now();
     let val = {
       id: "ZF" + now.toString().slice(-8),
-      customer,
+      // customer,
       model,
       type,
       color,
@@ -29,7 +35,7 @@ class Controller {
       price,
       amount
     };
-    tickets.insertOne(val);
+    client.insertOne(val);
     console.log(`success`);
     // do something
 

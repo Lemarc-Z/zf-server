@@ -1,13 +1,13 @@
 const { query } = require("../../mysql/util/db");
 
-class Tickets {
+class py {
   async insertOne(value) {
     // 获取请求提交的数据
 
-    let sql = "INSERT INTO hell set ?";
+    let sql = "INSERT INTO py set ?";
     query(sql, value);
-    console.log(`success`);
+    console.log(`np +1 `);
   }
 }
 
-module.exports = new Tickets();
+module.exports = new py();
