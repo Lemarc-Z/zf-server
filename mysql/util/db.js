@@ -14,6 +14,8 @@ let query = function(sql, values) {
         reject(err);
       } else {
         connection.query(sql, values, (err, rows) => {
+          console.log(`- sql ${JSON.stringify(sql)}`);
+          console.log(`- values ${JSON.stringify(values)}`);
           if (err) {
             reject(err);
           } else {

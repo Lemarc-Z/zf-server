@@ -1,12 +1,12 @@
 CREATE TABLE IF NOT EXISTS  `hell` (
     `id` varchar(10) NOT NULL,
-    `customer` varchar(10) DEFAULT NULL,
-    `model` varchar(10) DEFAULT NULL,
-    `type` varchar(10) DEFAULT NULL,
-    `color` varchar(10) DEFAULT NULL,
-    `pieces` int DEFAULT NULL,
-    `price` float DEFAULT NULL,
-    `amount` float DEFAULT NULL,
+    `customer` varchar(20) DEFAULT NULL,
+    `model` varchar(20) DEFAULT NULL,
+    `type` varchar(12) DEFAULT NULL,
+    `color` varchar(20) DEFAULT NULL,
+    `pieces` smallint DEFAULT NULL,
+    `price` float(3,1) DEFAULT NULL,
+    `amount` float(6,1) DEFAULT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

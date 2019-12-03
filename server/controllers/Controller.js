@@ -1,3 +1,6 @@
+// const { query } = require("../../mysql/util/db");
+const tickets = require("../classes/Tickets");
+
 class Controller {
   // 用户登录
   async login(ctx, next) {
@@ -14,25 +17,24 @@ class Controller {
 
     console.log(`${JSON.stringify(customer)}`);
 
+    // let sql = "INSERT INTO hell set ?";
+    let now = Date.now();
+    let val = {
+      id: "ZF" + now.toString().slice(-8),
+      customer,
+      model,
+      type,
+      color,
+      pieces,
+      price,
+      amount
+    };
+    tickets.insertOne(val);
+    console.log(`success`);
     // do something
 
     ctx.body = {
       success: true
-    };
-  }
-
-  // 用户信息
-  async userInfo(ctx, next) {
-    // do something
-
-    // 假设这是请求回来的数据
-    let data = {
-      name: "jk",
-      age: 25
-    };
-    ctx.body = {
-      status: true,
-      data
     };
   }
 }
