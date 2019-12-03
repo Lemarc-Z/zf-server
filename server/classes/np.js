@@ -1,7 +1,7 @@
 const { query } = require("../../mysql/util/db");
 
 class np {
-  async insertOne(value) {
+  insertOne(value) {
     // 获取请求提交的数据
 
     let sql = "INSERT INTO np set ?";
@@ -9,7 +9,7 @@ class np {
     console.log(`np +1 `);
   }
 
-  async findAll() {
+  findAll() {
     let sql = "SELECT * FROM np";
     query(sql).then(function(results) {
       console.log(`- results ${JSON.stringify(results, null, 4)}`);

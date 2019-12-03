@@ -3,10 +3,8 @@ const np = require("../classes/np");
 const py = require("../classes/py");
 const others = require("../classes/others");
 
-class Controller {
-  // 用户登录
+class ticketController {
   async ticket(ctx, next) {
-    // 获取请求提交的数据
     let orderNum = ctx.request.body.order_num || "";
     let customer = ctx.request.body.customer || "";
     let model = ctx.request.body.model || "";
@@ -39,7 +37,6 @@ class Controller {
     client.insertOne(val);
     // client.findAll();
     console.log(`success`);
-    // do something
 
     ctx.body = {
       success: true
@@ -47,4 +44,4 @@ class Controller {
   }
 }
 
-module.exports = new Controller();
+module.exports = new ticketController();
