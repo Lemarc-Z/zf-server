@@ -18,8 +18,8 @@ class py {
 
   findAllMonthly(year, month) {
     let sql =
-      "SELECT * FROM py WHERE YEAR(date)=? AND MONTH(date)=? ORDER BY date";
-    let val = { year, month };
+      "SELECT * FROM py WHERE YEAR(date)=? && MONTH(date)=? ORDER BY date";
+    let val = [`${year}`, `${month}`];
     query(sql, val).then(function(results) {
       console.log(`- results ${JSON.stringify(results)}`);
     });

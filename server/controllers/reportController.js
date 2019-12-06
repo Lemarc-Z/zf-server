@@ -4,7 +4,11 @@ const py = require("../classes/py");
 const others = require("../classes/others");
 
 class reportController {
-  async generateMonthlyReport(customer, year, month) {
+  async generateMonthlyReport(ctx, next) {
+    let customer = ctx.request.body.customer || "";
+    let year = ctx.request.body.year || "";
+    let month = ctx.request.body.month || "";
+
     let client;
     if (customer === "南平") client = np;
     else if (customer === "鹏延") client = py;
