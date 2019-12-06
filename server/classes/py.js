@@ -16,9 +16,11 @@ class py {
     });
   }
 
-  findAllMonthly(month) {
-    let sql = "SELECT * FROM py WHERE MONTH(date)=? ORDER BY date";
-    query(sql, month).then(function(results) {
+  findAllMonthly(year, month) {
+    let sql =
+      "SELECT * FROM py WHERE YEAR(date)=? AND MONTH(date)=? ORDER BY date";
+    let val = { year, month };
+    query(sql, val).then(function(results) {
       console.log(`- results ${JSON.stringify(results)}`);
     });
   }

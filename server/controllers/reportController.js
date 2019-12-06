@@ -4,13 +4,13 @@ const py = require("../classes/py");
 const others = require("../classes/others");
 
 class reportController {
-  async generateMonthlyReport(customer) {
+  async generateMonthlyReport(customer, year, month) {
     let client;
     if (customer === "南平") client = np;
     else if (customer === "鹏延") client = py;
     else client = others;
 
-    let retData = client.findAllMonthly();
+    let retData = client.findAllMonthly(year, month);
 
     ctx.body = {
       success: true

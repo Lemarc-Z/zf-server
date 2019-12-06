@@ -34,6 +34,9 @@ class ticketController {
       amount,
       date: new Date().toISOString().split("T")[0]
     };
+
+    // if (client === others) Object.assign (customer, val);   // 其他厂家需要写明
+
     client.insertOne(val);
     // client.findAll();
     console.log(`success`);
