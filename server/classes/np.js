@@ -15,6 +15,13 @@ class np {
       console.log(`- results ${JSON.stringify(results, null, 4)}`);
     });
   }
+
+  findAllMonthly(month) {
+    let sql = "SELECT * FROM np WHERE MONTH(date)=? ORDER BY date";
+    query(sql, month).then(function(results) {
+      console.log(`- results ${JSON.stringify(results)}`);
+    });
+  }
 }
 
 module.exports = new np();

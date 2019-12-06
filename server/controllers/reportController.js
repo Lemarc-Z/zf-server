@@ -10,7 +10,7 @@ class reportController {
     else if (customer === "鹏延") client = py;
     else client = others;
 
-    let retData = client.findAll();
+    let retData = client.findAllMonthly();
 
     ctx.body = {
       success: true
