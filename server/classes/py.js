@@ -16,13 +16,14 @@ class py {
     });
   }
 
-  findAllMonthly(year, month) {
+  async findAllMonthly(year, month) {
     let sql =
       "SELECT * FROM py WHERE YEAR(date)=? && MONTH(date)=? ORDER BY date";
     let val = [`${year}`, `${month}`];
-    query(sql, val).then(function(results) {
-      console.log(`- results ${JSON.stringify(results)}`);
+    let rows = await query(sql, val).then(function(results) {
+      return results;
     });
+    return rows;
   }
 }
 
