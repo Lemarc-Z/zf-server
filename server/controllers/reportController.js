@@ -5,7 +5,7 @@ const others = require("../classes/others");
 
 class reportController {
   async generateMonthlyReport(ctx, next) {
-    let customer = ctx.request.body.customer || "";
+    let customer = ctx.request.body.client || "";
     let year = ctx.request.body.year || "";
     let month = ctx.request.body.month || "";
 
