@@ -14,6 +14,7 @@ class ticketController {
       let pieces = ctx.request.body.pieces || "";
       let price = ctx.request.body.price || "";
       let amount = ctx.request.body.amount || "";
+      let remark = ctx.request.body.remark || "";
 
       console.log(`${JSON.stringify(customer)}`);
 
@@ -22,7 +23,6 @@ class ticketController {
       else if (customer === "鹏延") client = py;
       else client = others;
 
-      // let sql = "INSERT INTO hell set ?";
       let now = Date.now();
       let val = {
         id: now.toString().slice(-3) + "ZF" + orderNum,
@@ -33,12 +33,13 @@ class ticketController {
         pieces,
         price,
         amount,
-        date: new Date().toISOString().split("T")[0]
+        date: new Date().toISOString().split("T")[0],
+        remark
       };
 
-      // if (client === others) Object.assign (customer, val);   // 其他厂家需要写明
+      if (client === others) Object.assign (customer, val);   // 其他厂家需要写明
 
-      client.insertOne(val);
+      client.insertOne(customer,val);
       // client.findAll();
       console.log(`success`);
 

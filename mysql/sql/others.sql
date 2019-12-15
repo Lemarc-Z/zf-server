@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS  `others` (
     `price` float(3,1) DEFAULT NULL,
     `amount` float(6,1) DEFAULT NULL,
     `date` DATE DEFAULT NULL,
+    `model` varchar(20) DEFAULT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

@@ -17,7 +17,7 @@ class reportController {
 
           let retData;
           let reportData;
-          retData = await client.findAllMonthly(year, month);
+          retData = await client.findAllMonthly(customer, year, month);
           // console.log(`- retData ${JSON.stringify(retData)}`);
           reportData = retData.map(order => [
             order.date.toISOString().slice(0, 10),
@@ -26,7 +26,8 @@ class reportController {
             order.color,
             order.price,
             order.pieces,
-            order.amount
+            order.amount,
+            order.remark
           ]);
 
           reportData.unshift([
@@ -36,7 +37,8 @@ class reportController {
             "镀色",
             "单价",
             "数量",
-            "金额"
+            "金额",
+            "备注"
           ]);
 
           console.log(`- reportData ${JSON.stringify(reportData)}`);
