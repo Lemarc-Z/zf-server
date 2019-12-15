@@ -1,21 +1,22 @@
-const Koa = require("koa");
-const router = require("koa-router")();
-const bodyParser = require("koa-bodyparser");
-const apiRouter = require("./routers/router");
-const cors = require("@koa/cors");
-const app = new Koa();
+var Koa = require("koa");
+var app = new Koa();
+var koacfg = require('./config/koa');
 
-const index = router
-  .get("/", ctx => {
-    ctx.response.body = "hello zf";
-  })
-  .routes();
+// const index = router
+//   .get("/", ctx => {
+//     ctx.response.body = "hello zf";
+//   })
+//   .routes();
+app.init = async function () {
+    koacfg (app);
+    app.listen (3000);
+    console.log(`- zf server started`);
+};
 
-app.use(cors());
-app.use(index);
-app.use(bodyParser());
-app.use(apiRouter.routes());
+app.init().catch(function (err) {
+        console.error (err.stack);
+        process.exit (1);
+});
 
-app.listen(3001);
 
-console.log("[demo] start-quick is starting at port 3001");
+
