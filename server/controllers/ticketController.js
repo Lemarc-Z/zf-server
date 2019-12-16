@@ -1,6 +1,7 @@
 // const { query } = require("../../mysql/util/db");
 var np = require("../classes/np");
 var py = require("../classes/py");
+var gs = require("../classes/gs");
 var others = require("../classes/others");
 
 class ticketController {
@@ -28,7 +29,10 @@ class ticketController {
         client = py;
         database = 'py';
       }
-      // else if (customer === "高尚") client = gs; // to do change database
+      else if (customer === "高尚") {
+        client = gs;
+        database = 'gs';
+      }
       else {
         client = others;
         database = 'others';

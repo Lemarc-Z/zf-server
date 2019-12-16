@@ -1,7 +1,8 @@
 // const { query } = require("../../mysql/util/db");
-const np = require("../classes/np");
-const py = require("../classes/py");
-const others = require("../classes/others");
+var np = require("../classes/np");
+var py = require("../classes/py");
+var gs = require("../classes/gs");
+var others = require("../classes/others");
 
 class reportController {
   async generateMonthlyReport(ctx, next) {
@@ -20,7 +21,10 @@ class reportController {
         client = py;
         database = 'py';
       }
-      // else if (customer === "高尚") client = gs; // to do change database
+      else if (customer === "高尚") {
+        client = gs;
+        database = 'gs';
+      }
       else {
         client = others;
         database = 'others';
