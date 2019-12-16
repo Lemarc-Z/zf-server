@@ -1,19 +1,9 @@
 var { query } = require("../../mysql/util/db");
 
 class basis {
-  static insertOne(customer, value) {
+  static insertOne(database, value) {
     let sql = "INSERT INTO ? set ?";
-    
-    let val0;
-    
-    if (customer === "南平") val0 = 'np';
-    else if (customer === "鹏延") val0 = 'py';
-    // else if (customer === "高尚") val0 = 'gs'; // to do change database
-    else val0 = 'others';
-    
-    let val = [`${val0}`, `${value}`];
-    
-    
+    let val = [`${database}`, `${value}`];
     query(sql, value);
     console.log(`${database} + 1`);
   }

@@ -19,10 +19,20 @@ class ticketController {
       console.log(`${JSON.stringify(customer)}`);
 
       let client;
-      if (customer === "南平") client = np;
-      else if (customer === "鹏延") client = py;
+      let database;
+      if (customer === "南平") {
+        client = np;
+        database = 'np';
+      }
+      else if (customer === "鹏延") {
+        client = py;
+        database = 'py';
+      }
       // else if (customer === "高尚") client = gs; // to do change database
-      else client = others;
+      else {
+        client = others;
+        database = 'others';
+      }
 
       let now = Date.now();
       let val = {
@@ -40,7 +50,7 @@ class ticketController {
 
       if (client === others) Object.assign(customer, val); // 其他厂家需要写明
 
-      client.insertOne(customer, val);
+      client.insertOne(database, val);
       // client.findAll();
       console.log(`success`);
 

@@ -11,9 +11,20 @@ class reportController {
       let month = ctx.request.body.month || "";
 
       let client;
-      if (customer === "南平") client = np;
-      else if (customer === "鹏延") client = py;
-      else client = others;
+      let database;
+      if (customer === "南平") {
+        client = np;
+        database = 'np';
+      }
+      else if (customer === "鹏延") {
+        client = py;
+        database = 'py';
+      }
+      // else if (customer === "高尚") client = gs; // to do change database
+      else {
+        client = others;
+        database = 'others';
+      }
 
       let retData;
       let reportData;
