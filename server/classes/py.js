@@ -1,8 +1,7 @@
 var { query } = require("../../mysql/util/db");
-var basis = require ('../classes/basis');
+var basis = require("../classes/basis");
 
-class py extends basis
-{
+class py extends basis {
   // insertOne(value) {
   //   // 获取请求提交的数据
   //
@@ -29,4 +28,4 @@ class py extends basis
   // }
 }
 
-module.exports = np;
+module.exports = py;

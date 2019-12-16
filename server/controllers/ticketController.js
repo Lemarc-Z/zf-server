@@ -37,20 +37,19 @@ class ticketController {
         remark
       };
 
-      if (client === others) Object.assign (customer, val);   // 其他厂家需要写明
+      if (client === others) Object.assign(customer, val); // 其他厂家需要写明
 
-      client.insertOne(customer,val);
+      client.insertOne(customer, val);
       // client.findAll();
       console.log(`success`);
 
       ctx.body = {
         success: true
       };
-    }
-    catch (err) {
-        console.error (`err[${err.status}]: ${err.message}`);
-        console.error ('err.stack: ' + err.stack);
-        ctx.response.body  = {status: err.status || 500};
+    } catch (err) {
+      console.error(`err[${err.status}]: ${err.message}`);
+      console.error("err.stack: " + err.stack);
+      ctx.response.body = { status: err.status || 500 };
     }
   }
 }

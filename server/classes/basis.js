@@ -1,8 +1,6 @@
 const { query } = require("../../mysql/util/db");
 
-
-class YMBaseModel
-{
+class basis {
   insertOne(database, value) {
     let sql = "INSERT INTO ? set ?";
     let val = [`${database}`, `${value}`];
@@ -17,7 +15,7 @@ class YMBaseModel
     });
   }
 
-  async findAllMonthly(database ,year, month) {
+  async findAllMonthly(database, year, month) {
     let sql =
       "SELECT * FROM ? WHERE YEAR(date)=? && MONTH(date)=? ORDER BY date";
     let val = [`${database}`, `${year}`, `${month}`];
@@ -27,3 +25,5 @@ class YMBaseModel
     return rows;
   }
 }
+
+module.exports = basis;

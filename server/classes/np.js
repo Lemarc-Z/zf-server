@@ -1,8 +1,7 @@
 var { query } = require("../../mysql/util/db");
-var basis = require ('../classes/basis');
+var basis = require("../classes/basis");
 
-class np extends basis
-{
+class np extends basis {
   // insertOne(value) {
   //   // 获取请求提交的数据
   //
