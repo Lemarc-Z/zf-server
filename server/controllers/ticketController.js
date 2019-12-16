@@ -1,7 +1,7 @@
 // const { query } = require("../../mysql/util/db");
-const np = require("../classes/np");
-const py = require("../classes/py");
-const others = require("../classes/others");
+var np = require("../classes/np");
+var py = require("../classes/py");
+var others = require("../classes/others");
 
 class ticketController {
   async ticket(ctx, next) {
@@ -21,6 +21,7 @@ class ticketController {
       let client;
       if (customer === "南平") client = np;
       else if (customer === "鹏延") client = py;
+      // else if (customer === "高尚") client = gs; // to do change database
       else client = others;
 
       let now = Date.now();
