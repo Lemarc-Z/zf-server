@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS  `others` (
     `id` varchar(10) NOT NULL,
-    `customer` varchar(20) NOT NULL,  -- 其他厂家需要写明
+    `customer` varchar(20) DEFAULT NULL,  -- 其他厂家需要写明
     `model` varchar(20) DEFAULT NULL,
     `type` varchar(12) DEFAULT NULL,
     `color` varchar(20) DEFAULT NULL,

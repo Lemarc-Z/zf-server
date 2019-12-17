@@ -21,25 +21,10 @@ class ticketController {
 
       let client;
       let database;
-      if (customer === "南平") {
-        client = np;
-        database = 'np';
-      }
-      else if (customer === "鹏延") {
-        client = py;
-        database = 'py';
-      }
-      else if (customer === "高尚") {
-        client = gs;
-        database = 'gs';
-      }
-      else {
-        client = others;
-        database = 'others';
-      }
+      let val;
 
       let now = Date.now();
-      let val = {
+      val = {
         id: now.toString().slice(-3) + "ZF" + orderNum,
         // customer,
         model,
@@ -52,12 +37,22 @@ class ticketController {
         remark
       };
 
-      if (client === others) Object.assign(customer, val); // 其他厂家需要写明
+      if (customer === "南平") {
+        client = np;
+        database = "np";
+      } else if (customer === "鹏延") {
+        client = py;
+        database = "py";
+      } else if (customer === "高尚") {
+        client = gs;
+        database = "gs";
+      } else {
+        client = others;
+        database = "others";
+        val.customer = customer; // 其他厂家需要写明
+      }
 
       client.insertOne(database, val);
-      // client.findAll();
-      console.log(`success`);
-
       ctx.body = {
         success: true
       };
