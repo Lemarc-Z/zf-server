@@ -15,24 +15,21 @@ class reportController {
       let database;
       if (customer === "南平") {
         client = np;
-        database = 'np';
-      }
-      else if (customer === "鹏延") {
+        database = "np";
+      } else if (customer === "鹏延") {
         client = py;
-        database = 'py';
-      }
-      else if (customer === "高尚") {
+        database = "py";
+      } else if (customer === "高尚") {
         client = gs;
-        database = 'gs';
-      }
-      else {
+        database = "gs";
+      } else {
         client = others;
-        database = 'others';
+        database = "others";
       }
 
       let retData;
       let reportData;
-      retData = await client.findAllMonthly(customer, year, month);
+      retData = await client.findAllMonthly(database, year, month);
       // console.log(`- retData ${JSON.stringify(retData)}`);
       reportData = retData.map(order => [
         order.date.toISOString().slice(0, 10),
