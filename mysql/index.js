@@ -41,4 +41,4 @@ const createAllTables = async () => {
   console.log("请按 ctrl + c 键退出！");
 };
 
-// createAllTables(); // 修改数据库
+createAllTables(); // 修改数据库

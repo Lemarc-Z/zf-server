@@ -28,4 +28,4 @@ class gs extends basis {
   // }
 }
 
-module.exports = np;
+module.exports = gs;
