@@ -3,7 +3,7 @@ const ticketController = require("../controllers/ticketController");
 const reportController = require("../controllers/reportController");
 
 router
-  .post("/ticket", ticketController.ticket)
-  .post("/report", reportController.generateMonthlyReport);
+  .post("/api/ticket", ticketController.ticket)
+  .post("/api/report", reportController.generateMonthlyReport);
 
 module.exports = router;
