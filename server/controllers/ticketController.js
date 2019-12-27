@@ -53,7 +53,7 @@ class ticketController {
       }
 
       client.insertOne(database, val);
-      ctx.body = {
+      ctx.response.body = {
         success: true
       };
     } catch (err) {

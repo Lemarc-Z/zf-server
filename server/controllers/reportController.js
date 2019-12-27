@@ -55,7 +55,7 @@ class reportController {
 
       console.log(`- reportData ${JSON.stringify(reportData)}`);
 
-      ctx.body = {
+      ctx.response.body = {
         success: true,
         csv_data: reportData
       };
