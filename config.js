@@ -1,5 +1,5 @@
 const config = {
-  port: 3001,
+  port: 4000,
 
   database: {
     DATABASE: "order",
